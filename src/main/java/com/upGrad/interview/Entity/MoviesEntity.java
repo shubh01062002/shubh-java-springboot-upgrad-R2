@@ -19,9 +19,10 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder(toBuilder = true)
-@Table(name = "countries")
+@Table(name = "Movies")
 
-public class Country extends BaseEntity {
+
+public class MoviesEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,14 +30,18 @@ public class Country extends BaseEntity {
     private Integer id;
 
 
-    @Column(name = "name", nullable = false, length = 255)
-    private String name;
+    @Column(name = "title", nullable = false, length = 255)
+    private String title;
 
-    @Column(name = "short_name", nullable = false, length = 255)
-    private String shortName;
+    @Column(name = "release_year" , nullable=false)
+    private Integer release_year;
 
-    @Column(name = "phone_code")
-    private int phoneCode;
+     @Column(name = "runtime" , nullable=true)
+    private Integer runtime;
+
+
+
+    @Column(name = "plot", nullable = true, length = 255)
+    private String plot;
 
 }
-
